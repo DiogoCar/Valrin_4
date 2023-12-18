@@ -20,37 +20,42 @@ public class Valrin {
 
 
 
-
-int count = 0;
+        int mc;
+        String smc;
+        
+        smc= JOptionPane.showInputDialog(null,"Numero maximo: ");
+        mc= Integer.parseInt(smc);
+        
+        double[]c = new double[mc];
+       int cnt = 0;
         
         while (true) {
-            String input = JOptionPane.showInputDialog("Informe o valor do cheque ou 'sair' para terminar:");
-            if (input.equalsIgnoreCase("sair") || count >= maxCheques) break;
+            String inp = JOptionPane.showInputDialog("Valor do cheque. 'sair' para fechar:");
+            if (inp.equalsIgnoreCase("sair") || cnt >= mc) break;
             
             try {
-                cheques[count] = Double.parseDouble(input);
-                count++;
+                c[cnt] = Double.parseDouble(inp);
+                cnt++;
             } catch (NumberFormatException e) {
-                JOptionPane.showMessageDialog(null, "Por favor, insira um número válido.");
+                JOptionPane.showMessageDialog(null, "Numero: ");
             }
         }
         
         double total = 0, min = Double.MAX_VALUE, max = Double.MIN_VALUE;
         StringBuilder listBuilder = new StringBuilder();
         
-        for (int i=0; i < count; i++) {
-            total += cheques[i];
-            if (cheques[i] < min) min = cheques[i];
-            if (cheques[i] > max) max = cheques[i];
+        for (int i=0; i < cnt; i++) {
+            total += c[i];
+            if (c[i] < min) min = c[i];
+            if (c[i] > max) max = c[i];
             
-            listBuilder.append(cheques[i]).append("\n");
+            listBuilder.append(c[i]).append("\n");
         }
         
-        String message =
-                "Lista de valores: \n" + listBuilder.toString() +
-                "\nMaior valor: " + max +
-                "\nMenor valor: " + min;
+
                 
-       JOptionPane.showMessageDialog(null, message);
+       JOptionPane.showMessageDialog(null, "Lista de valores: "+"\n" + listBuilder.toString() +
+                "\n"+"Maior valor: " + max +
+                "\n"+"Menor valor: " + min);
     }
 }
