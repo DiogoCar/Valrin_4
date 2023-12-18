@@ -1,0 +1,34 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package exercicio_fix;
+
+import javax.swing.JOptionPane;
+/**
+ *
+ * @author Discente
+ */
+
+public class Valrin {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+
+int n = 15;
+        double[] inicioSemana = new double[n];
+        double[] fimSemana = new double[n];
+        double[] mediaPreco = new double[n];
+
+        // Preencha os preços no início e no fim da semana aqui
+
+        for (int i = 0; i < n; i++) {
+            mediaPreco[i] = (inicioSemana[i] + fimSemana[i]) / 2;
+        }
+
+        // Imprima a lista de preços médios aqui
+    }
+}
