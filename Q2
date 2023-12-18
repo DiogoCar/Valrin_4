@@ -1,0 +1,43 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package exercicio_fix;
+
+import javax.swing.JOptionPane;
+/**
+ *
+ * @author Discente
+ */
+
+public class Valrin {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+
+ int mv = 0, d = 0, m = 0;
+ int mmv= Integer.MAX_VALUE, d1=0;
+ String sc;
+        int[][] v = new int[30][12]; 
+        for (int j = 0; j < 1; j++) {
+            for (int i = 0; i < 30; i++) {
+                sc = JOptionPane.showInputDialog("Volume de carros no dia " + (i+1) + " de setembro ");
+                v[i][j] = Integer.parseInt(sc);
+                if (v[i][j] > mv) {
+                    mv = v[i][j];
+                    d = i+1;}
+                if(v[i][j]<mmv){mmv=v[i][j];
+                d1=i+1;}
+   
+                }
+            
+        }
+        JOptionPane.showMessageDialog(null, "Maior volume foi o dia: " + d + " de setembro " + " ( " + mv+ " carros)");
+        JOptionPane.showMessageDialog(null, "Menor volume foi o dia: " + d1 + " de setembro " + " ( " + mmv+ " carros)");
+            
+        
+    }
+}
