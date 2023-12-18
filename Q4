@@ -1,4 +1,24 @@
-        int[][] a = {{1,2,3}, {4,5,6}};
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package exercicio_fix;
+
+import javax.swing.JOptionPane;
+/**
+ *
+ * @author Discente
+ */
+
+public class Valrin {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+
+int[][] a = {{1,2,3}, {4,5,6}};
         int[][] b = {{7,8}, {9,10}, {11,12}};
         int[][] c = new int[a.length][b[0].length];
 
@@ -10,14 +30,14 @@
             }
         }
 
-        StringBuilder resultMatrix = new StringBuilder();
+        StringBuilder m = new StringBuilder();
         for (int[] row : c) {
             for (int col : row) {
-                resultMatrix.append(col).append(" ");
+                m.append(col).append(" ");
             }
-            resultMatrix.append("\n");
+            m.append("\n");
         }
 
-        JOptionPane.showMessageDialog(null,"Matriz Resultante:\n" + resultMatrix.toString());
+        JOptionPane.showMessageDialog(null,"Resultado:\n" + m.toString());
     }
 }
