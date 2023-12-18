@@ -1,0 +1,20 @@
+import javax.swing.JOptionPane;
+
+public class Main {
+    public static void main(String[] args) {
+        int maiorVolume = 0, dia = 0, mes = 0;
+        int[][] volumes = new int[30][12]; // Matriz para 30 dias e 12 meses
+        for (int j = 0; j < 12; j++) {
+            for (int i = 0; i < 30; i++) {
+                String input = JOptionPane.showInputDialog("Digite o volume de carros no dia " + (i+1) + " do mês " + (j+1));
+                volumes[i][j] = Integer.parseInt(input);
+                if (volumes[i][j] > maiorVolume) {
+                    maiorVolume = volumes[i][j];
+                    dia = i+1;
+                    mes = j+1;
+                }
+            }
+        }
+        JOptionPane.showMessageDialog(null, "O maior volume ocorreu no dia " + dia + " do mês " + mes + " e foi de " + maiorVolume + " carros");
+    }
+}
